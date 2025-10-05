@@ -1,0 +1,58 @@
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ejercicio 12 - Numeros pares del 1 al 20 y su suma</title>
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card" role="region" aria-label="Ejercicio mostrar numeros">
+    <h2> Ejercicio 12: Numeros pares del 1 al 20 y su suma. </h2>
+
+    <div class="instrucciones">
+      
+      <p> Informa la suma total de <strong>pares.</strong>
+    </div>
+
+  
+    <div class="numeros"  aria-live="polite">Haz clic en "mostrar numeros".</div>
+
+  
+    <button id="btnejecutar" class="btn" type="button">¡MOSTRAR NUMEROS!</button>
+
+     <ul id="listaNumeros" aria-label="Lista de números"></ul>
+       <p id="resultadoSuma"></p>
+       
+  </div>
+
+
+  <script>
+    function lista() {
+        const lista = document.getElementById("listaNumeros");
+        const resultado = document.getElementById("resultadoSuma");
+        lista.innerHTML="";
+        resultado.textContent = ""; 
+        let suma = 0;
+        
+        
+   for (let numeros = 1;numeros<=20;numeros++) {
+       if (numeros % 2 === 0) {
+       lista.innerHTML += `<li>${numeros}</li>`; 
+       suma += numeros;
+      }
+       }
+        resultado.textContent = `Suma de pares: ${suma}`;
+    }
+  window.onload = function() {
+    const button = document.getElementById("btnejecutar");
+   button.onclick = lista;  
+       
+       };
+ 
+  </script>
+</body>
+</html>
